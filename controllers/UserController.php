@@ -2,6 +2,6 @@
 
 class UserController extends Controller {
     public function index(){
-        echo 'ok';
+        return $this->view->render('index');
     }
 }

@@ -14,6 +14,21 @@ if($request_method == 'GET' && $route == '/api/user'){
     exit;
 }
 
+
+
+if($request_method == 'GET' && $route == '/'){
+
+    header('content-type: text/html');
+
+    require_once './controllers/UserController.php';
+
+    $user_controller  = new UserController();
+
+    echo $user_controller->index();
+    exit;
+}
+
+
 http_response_code(400);
 echo json_encode([
     'status' => false,
